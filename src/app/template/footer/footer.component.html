@@ -1,0 +1,13 @@
+<footer class="pf-footer">
+  <div class="pf-container pf-footer__inner">
+    <div class="pf-footer__brand">
+      <div class="pf-footer__badge">YD</div>
+      <span class="pf-footer__text">{{ footerName }}</span>
+    </div>
+    <div class="pf-footer__socials">
+      <a *ngFor="let s of socials" [href]="s.href" target="_blank" rel="noopener noreferrer" class="pf-footer__social">
+        <app-icon [name]="s.icon" [size]="15"></app-icon>
+      </a>
+    </div>
+  </div>
+</footer>

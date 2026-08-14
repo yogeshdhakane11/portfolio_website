@@ -1,0 +1,66 @@
+<section id="about" class="pf-section">
+  <div class="pf-section__line" style="--line-color: var(--pf-indigo)"></div>
+  <div class="pf-container">
+    <div class="pf-shead" pfReveal>
+      <div class="pf-shead__tag" style="--tag-color: var(--pf-indigo)">
+        <span class="pf-shead__dot"></span>about me
+      </div>
+      <h2 class="pf-shead__title">Professional Summary</h2>
+    </div>
+
+    <div class="pf-about__wrap">
+      <div pfReveal [delay]="80">
+        <div class="pf-card pf-card--pad" style="--accent: var(--pf-violet)">
+          <div class="pf-card__head">
+            <div class="pf-card__icon" style="--icon-bg: rgba(139,92,246,.12)">
+              <app-icon name="zap" [size]="13" color="var(--pf-violet)"></app-icon>
+            </div>
+            <span class="pf-card__head-text">About Me</span>
+          </div>
+          <p class="pf-about__text">
+            Highly skilled and result-driven Flutter Developer with <span class="pf-accent-indigo">1.6+ years of experience</span>
+            developing enterprise-level Flutter Android and iOS applications. Proficient in <span class="pf-accent-cyan">Java Spring Boot &amp; REST APIs</span>
+            for backend, and <span class="pf-accent-pink">Angular, HTML, CSS &amp; TypeScript</span> for web development.
+          </p>
+          <p class="pf-about__text pf-about__text--mt">
+            Proven ability to work independently or as part of a team, with strong communication skills to effectively collaborate with cross-functional teams.
+          </p>
+        </div>
+      </div>
+
+      <div class="pf-about__grid">
+        <div *ngFor="let f of capabilities; let i = index" pfReveal [delay]="i * 70">
+          <div class="pf-card pf-card--sm" [style.--accent]="f.color">
+            <div class="pf-card__icon pf-card__icon--md" [style.background]="f.color + '18'" [style.color]="f.color">
+              <app-icon [name]="f.icon" [size]="18" [color]="f.color"></app-icon>
+            </div>
+            <p class="pf-about__cap-title">{{ f.title }}</p>
+            <p class="pf-about__cap-sub">{{ f.sub }}</p>
+          </div>
+        </div>
+      </div>
+
+      <div pfReveal [delay]="200">
+        <div class="pf-card pf-about__cert" style="--accent: var(--pf-amber)">
+          <div class="pf-about__cert-icon">
+            <app-icon name="award" [size]="20" color="var(--pf-amber)"></app-icon>
+          </div>
+          <div class="pf-about__cert-text">
+            <p class="pf-about__cert-title">Java Full Stack Certification</p>
+            <p class="pf-about__cert-sub">Certified · Verified</p>
+          </div>
+          <div class="pf-about__cert-badge">Certified</div>
+        </div>
+      </div>
+
+      <div pfReveal [delay]="250">
+        <div class="pf-about__socials">
+          <a *ngFor="let s of socials" [href]="s.href" target="_blank" rel="noopener noreferrer"
+             class="pf-about__social" [style.background]="s.color + '12'" [style.borderColor]="s.color + '30'" [style.color]="s.color">
+            <app-icon [name]="s.icon" [size]="14" [color]="s.color"></app-icon>{{ s.label }}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

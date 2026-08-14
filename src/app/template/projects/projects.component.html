@@ -1,0 +1,79 @@
+<section id="projects" class="pf-section">
+  <div class="pf-section__line" style="--line-color: var(--pf-pink)"></div>
+  <div class="pf-container">
+    <div class="pf-shead" pfReveal>
+      <div class="pf-shead__tag" style="--tag-color: var(--pf-pink)">
+        <span class="pf-shead__dot"></span>projects
+      </div>
+      <h2 class="pf-shead__title">What I've Built</h2>
+      <p class="pf-shead__sub">Live production apps and open-source personal projects.</p>
+    </div>
+
+    <div pfReveal class="pf-projects__featured-wrap">
+      <div class="pf-projects__featured">
+        <div class="pf-projects__featured-glow"></div>
+        <div class="pf-projects__featured-body">
+          <div class="pf-projects__featured-top">
+            <span class="pf-projects__badge">⭐ Featured</span>
+            <span class="pf-projects__note">// live on App Store · Play Store · Web</span>
+          </div>
+          <h3 class="pf-projects__featured-title">FundsPI</h3>
+          <p class="pf-projects__featured-sub">Mutual Fund Investment Platform</p>
+          <p class="pf-projects__featured-desc">
+            A full-featured mutual fund investment platform available on Android, iOS, and Web — with real-time portfolio tracking and seamless invest flows.
+          </p>
+          <div class="pf-projects__tags">
+            <span *ngFor="let t of fundspiTags" class="pf-projects__tag">{{ t }}</span>
+          </div>
+          <div class="pf-projects__links">
+            <a *ngFor="let l of fundspiLinks" [href]="l.url" target="_blank" rel="noopener noreferrer"
+               class="pf-projects__link" [class.pf-projects__link--primary]="l.primary">
+              <app-icon name="external-link" [size]="13"></app-icon>{{ l.label }}
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div pfReveal class="pf-projects__insurepi-wrap">
+      <div class="pf-card pf-card--pad pf-projects__insurepi" style="--accent: var(--pf-emerald)">
+        <div>
+          <h3 class="pf-projects__insurepi-title">InsurePi — Insurance Platform</h3>
+          <p class="pf-projects__insurepi-sub">Digital insurance solutions · Part of the PI product suite</p>
+        </div>
+        <a href="https://www.insurepi.in/" target="_blank" rel="noopener noreferrer" class="pf-projects__insurepi-link">
+          <app-icon name="globe" [size]="13" color="var(--pf-emerald)"></app-icon> insurepi.in
+        </a>
+      </div>
+    </div>
+
+    <div class="pf-projects__oss-head">
+      <h3 pfReveal class="pf-projects__oss-title">
+        <app-icon name="github" [size]="17" color="var(--pf-slate-500)"></app-icon> Open Source Projects
+      </h3>
+      <a [href]="githubBase" target="_blank" rel="noopener noreferrer" class="pf-projects__oss-viewall">
+        View all <app-icon name="external-link" [size]="12" color="var(--pf-violet)"></app-icon>
+      </a>
+    </div>
+
+    <div class="pf-projects__grid">
+      <div *ngFor="let p of openSourceProjects; let i = index" pfReveal [delay]="i * 55">
+        <div class="pf-card pf-card--sm pf-projects__oss-card" [style.--accent]="p.color">
+          <div class="pf-projects__oss-top">
+            <div class="pf-projects__oss-icon" [style.background]="p.color + '18'" [style.color]="p.color">
+              <app-icon name="code2" [size]="14" [color]="p.color"></app-icon>
+            </div>
+            <a [href]="githubBase + p.repo" target="_blank" rel="noopener noreferrer" class="pf-projects__oss-github">
+              <app-icon name="github" [size]="13"></app-icon>
+            </a>
+          </div>
+          <h4 class="pf-projects__oss-card-title">{{ p.title }}</h4>
+          <p class="pf-projects__oss-card-desc">{{ p.desc }}</p>
+          <div class="pf-projects__oss-tags">
+            <span *ngFor="let t of p.tags" [style.background]="p.color + '0e'" [style.borderColor]="p.color + '20'" [style.color]="p.color">{{ t }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

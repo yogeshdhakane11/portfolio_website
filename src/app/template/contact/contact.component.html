@@ -1,0 +1,46 @@
+<section id="contact" class="pf-section pf-contact">
+  <div class="pf-section__line" style="--line-color: var(--pf-pink)"></div>
+  <div class="pf-contact__glow"></div>
+  <div class="pf-container">
+    <div class="pf-shead" pfReveal>
+      <div class="pf-shead__tag" style="--tag-color: var(--pf-pink)">
+        <span class="pf-shead__dot"></span>contact
+      </div>
+      <h2 class="pf-shead__title">Let's Connect</h2>
+      <p class="pf-shead__sub">Open to new opportunities, collaborations, and interesting projects.</p>
+    </div>
+
+    <div class="pf-contact__grid">
+      <div pfReveal class="pf-contact__main-col">
+        <div class="pf-card pf-card--glow pf-contact__main" style="--accent: var(--pf-indigo)">
+          <div class="pf-contact__icon">
+            <app-icon name="mail" [size]="26" color="var(--pf-indigo)"></app-icon>
+          </div>
+          <h3 class="pf-contact__hello">Say Hello!</h3>
+          <p class="pf-contact__desc">Whether you have a project in mind, want to collaborate, or just want to say hi — my inbox is always open.</p>
+          <a href="mailto:yogeshdhakane001@gmail.com" class="pf-contact__cta">
+            <app-icon name="mail" [size]="16"></app-icon>yogeshdhakane001&#64;gmail.com
+          </a>
+          <div class="pf-contact__avail">
+            <span class="pf-contact__avail-dot"></span>
+            <span>Available for new projects · Pune, India</span>
+          </div>
+        </div>
+      </div>
+
+      <div pfReveal [delay]="100" class="pf-contact__side-col">
+        <p class="pf-contact__side-label">Find me on</p>
+        <a *ngFor="let s of socials" [href]="s.url" target="_blank" rel="noopener noreferrer" class="pf-contact__social">
+          <div class="pf-contact__social-icon" [style.background]="s.color + '18'" [style.color]="s.color">
+            <app-icon [name]="s.icon" [size]="20" [color]="s.color"></app-icon>
+          </div>
+          <div class="pf-contact__social-text">
+            <p class="pf-contact__social-label">{{ s.label }}</p>
+            <p class="pf-contact__social-sub">{{ s.sub }}</p>
+          </div>
+          <app-icon name="chevron-right" [size]="14" color="var(--pf-slate-700)"></app-icon>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

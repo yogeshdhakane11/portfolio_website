@@ -1,0 +1,282 @@
+/* You can add global styles to this file, and also import other style files */
+@import "bootstrap/dist/css/bootstrap.min.css";
+html,
+body {
+    height: 100%;
+    background-color: #fff;
+}
+
+body {
+    margin: 0;
+    font-family: "poppins", sans-serif;
+
+}
+
+:root {
+    --site-main-color: #d81b60;
+    --site-sub_main-color: #faad2f;
+    --var-light-blue: #6B7A99;
+    --var--dark-blue: #181945;
+    --primaryClr: #cc1f61;
+    --primaryClr60: #cc1f61b6;
+    --primaryClr10: #cc1f614d;
+    --secondaryClr: #23500a;
+    --secondaryClr130: #23500a;
+    --secondaryClr60: #23500a;
+    --secondaryClr30: #23500a;
+    --FundspiYellow: #ffb61b;
+    --FundspiYellow10: #fff5e0;
+    --FundspiYellow05: rgba(255, 182, 27, 0.05);
+    --FundspiRed: #eb5b3c;
+    --FundspiRed10: #fae9e5;
+    --FundspiRed05: rgba(235, 91, 60, 0.05);
+    --border: #ecedef;
+    --iconLight: #b0b2ba;
+    --iconMedium: #dddee1;
+    --iconStrong: #ecedef;
+    --boxShadow: rgba(0, 0, 0, 0.1);
+    --text130: #44475b;
+    --text: #44475b;
+    --subText: #7c7e8c;
+    --subText50: #b0b2ba;
+    --subText70: #ecedef;
+    --primaryBg: #fff;
+    --secondaryBg: #fff;
+    --tertiaryBg: #ecedef;
+    --quaternaryBg: #f6f6f7;
+    --preloaderBg: #f6f6f7;
+    --rippleNormal: rgba(0, 0, 0, 0.1);
+    --constantWhite: #fff;
+    --constantSecondaryClr10: #f6f6f7;
+    --cardBackground: #fff;
+    /* AdminDashbord color */
+    --admin_dashbord: #0a6d7f;
+    --admin_dash_main: #0a6d7f;
+    --admin_white: #FFFFFF;
+    --admin_boredr: #ccc;
+    --admin_test: #444;
+    --admin_overlay: #333;
+    --admin_black: black;
+    --admin_gray: gray;
+    --admin_text: #252732;
+    --admin_popup: #e797b6;
+    --admin_setback: #f8f9fc;
+    --admin_border: #e3e6f0;
+
+    /* ---- Portfolio theme palette (dark) ---- */
+    --pf-indigo: #6366f1;
+    --pf-violet: #8b5cf6;
+    --pf-pink: #ec4899;
+    --pf-cyan: #06b6d4;
+    --pf-emerald: #10b981;
+    --pf-amber: #f59e0b;
+    --pf-rose: #f43f5e;
+    --pf-sky: #38bdf8;
+    --pf-bg: #04040f;
+    --pf-white: #ffffff;
+    --pf-slate-300: #cbd5e1;
+    --pf-slate-400: #94a3b8;
+    --pf-slate-500: #64748b;
+    --pf-slate-600: #475569;
+    --pf-slate-700: #334155;
+    --pf-font-heading: 'Space Grotesk', sans-serif;
+    --pf-font-body: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* ---- Portfolio global helpers ---- */
+.pf-app {
+    background: var(--pf-bg);
+    font-family: var(--pf-font-body);
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.pf-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+html.pf-scroll {
+    scroll-behavior: smooth;
+}
+
+.pf-app ::-webkit-scrollbar {
+    width: 4px;
+}
+
+.pf-app ::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.pf-app ::-webkit-scrollbar-thumb {
+    background: rgba(99, 102, 241, 0.3);
+    border-radius: 9999px;
+}
+
+.pf-app ::-webkit-scrollbar-thumb:hover {
+    background: rgba(99, 102, 241, 0.6);
+}
+
+@keyframes pf-fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pf-floatA {
+    0%, 100% { transform: translate(0, 0); }
+    33% { transform: translate(30px, -20px); }
+    66% { transform: translate(-20px, 15px); }
+}
+
+@keyframes pf-floatB {
+    0%, 100% { transform: translate(0, 0); }
+    33% { transform: translate(-25px, 20px); }
+    66% { transform: translate(15px, -25px); }
+}
+
+@keyframes pf-floatC {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(-30px, 20px); }
+}
+
+@keyframes pf-floatD {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(20px, -15px); }
+}
+
+@keyframes pf-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: .5; }
+}
+
+@keyframes pf-bounce {
+    0%, 100% { transform: translateY(-15%); animation-timing-function: cubic-bezier(.8,0,1,1); }
+    50% { transform: translateY(0); animation-timing-function: cubic-bezier(0,0,.2,1); }
+}
+
+.pf-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity .7s cubic-bezier(.22,1,.36,1), transform .7s cubic-bezier(.22,1,.36,1);
+}
+.pf-reveal.pf-reveal--left { transform: translateX(-30px); }
+.pf-reveal.pf-reveal--right { transform: translateX(30px); }
+.pf-reveal.pf-in {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+/* ---- Shared section / card / heading primitives (used across components) ---- */
+.pf-section {
+    position: relative;
+    padding-block: 112px;
+}
+
+.pf-section__line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--line-color, var(--pf-indigo)), transparent);
+    opacity: .5;
+}
+
+.pf-shead {
+    text-align: center;
+    margin-bottom: 64px;
+}
+
+.pf-shead__tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    border-radius: 9999px;
+    font-size: 11px;
+    font-family: monospace;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    border: 1px solid color-mix(in srgb, var(--tag-color, var(--pf-indigo)) 35%, transparent);
+    background: color-mix(in srgb, var(--tag-color, var(--pf-indigo)) 10%, transparent);
+    color: var(--tag-color, var(--pf-indigo));
+}
+
+.pf-shead__dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 9999px;
+    background: currentColor;
+    animation: pf-pulse 2s infinite;
+}
+
+.pf-shead__title {
+    font-size: clamp(1.9rem, 4vw, 2.75rem);
+    font-weight: 800;
+    color: #fff;
+    margin: 0 0 12px;
+    letter-spacing: -0.02em;
+    font-family: var(--pf-font-heading);
+}
+
+.pf-shead__sub {
+    color: var(--pf-slate-500);
+    max-width: 460px;
+    margin: 0 auto;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.pf-card {
+    position: relative;
+    border-radius: 16px;
+    border: 1px solid color-mix(in srgb, var(--accent, var(--pf-indigo)) 22%, transparent);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+    backdrop-filter: blur(12px);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    transition: transform .3s;
+}
+
+.pf-card--glow {
+    box-shadow: 0 0 40px color-mix(in srgb, var(--accent, var(--pf-indigo)) 15%, transparent), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.pf-card--pad { padding: 24px; }
+.pf-card--sm { padding: 16px; }
+
+.pf-card__head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.pf-card__icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--icon-bg, rgba(99, 102, 241, .12));
+}
+
+.pf-card__icon--md {
+    width: 36px;
+    height: 36px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+}
+
+.pf-card__head-text {
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.pf-accent-indigo { color: #818cf8; font-weight: 500; }
+.pf-accent-pink { color: #f472b6; font-weight: 500; }
+.pf-accent-cyan { color: #22d3ee; font-weight: 500; }

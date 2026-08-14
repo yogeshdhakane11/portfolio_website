@@ -1,0 +1,43 @@
+<section id="experience" class="pf-section">
+  <div class="pf-section__line" style="--line-color: var(--pf-violet)"></div>
+  <div class="pf-container">
+    <div class="pf-shead" pfReveal>
+      <div class="pf-shead__tag" style="--tag-color: var(--pf-violet)">
+        <span class="pf-shead__dot"></span>experience
+      </div>
+      <h2 class="pf-shead__title">Work History</h2>
+      <p class="pf-shead__sub">Building real products in a professional SaaS environment.</p>
+    </div>
+
+    <div class="pf-exp__list">
+      <div *ngFor="let exp of experiences; let i = index" pfReveal [delay]="i * 100">
+        <div class="pf-exp__item" [style.borderColor]="exp.color + '30'">
+          <div class="pf-exp__dot" [style.background]="exp.color"></div>
+          <div class="pf-card pf-card--pad" [class.pf-card--glow]="exp.current" [style.--accent]="exp.color">
+            <div class="pf-exp__head">
+              <div>
+                <div class="pf-exp__title-row">
+                  <h3 class="pf-exp__role">{{ exp.role }}</h3>
+                  <span class="pf-exp__type" [style.background]="exp.color + '18'" [style.color]="exp.color" [style.borderColor]="exp.color + '30'">{{ exp.type }}</span>
+                  <span *ngIf="exp.current" class="pf-exp__current">
+                    <span class="pf-exp__current-dot"></span>Current
+                  </span>
+                </div>
+                <p class="pf-exp__company" [style.color]="exp.color">{{ exp.company }}</p>
+                <p class="pf-exp__loc"><app-icon name="map-pin" [size]="10" color="var(--pf-slate-500)"></app-icon>{{ exp.loc }}</p>
+              </div>
+              <div class="pf-exp__period">
+                <app-icon name="calendar" [size]="11"></app-icon>{{ exp.period }}
+              </div>
+            </div>
+            <ul class="pf-exp__bullets">
+              <li *ngFor="let b of exp.bullets">
+                <span class="pf-exp__bullet-dot" [style.background]="exp.color"></span>{{ b }}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

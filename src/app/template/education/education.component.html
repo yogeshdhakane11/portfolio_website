@@ -1,0 +1,33 @@
+<section id="education" class="pf-section">
+  <div class="pf-section__line" style="--line-color: var(--pf-emerald)"></div>
+  <div class="pf-container">
+    <div class="pf-shead" pfReveal>
+      <div class="pf-shead__tag" style="--tag-color: var(--pf-emerald)">
+        <span class="pf-shead__dot"></span>education
+      </div>
+      <h2 class="pf-shead__title">Academic Background</h2>
+      <p class="pf-shead__sub">My formal education in Computer Science.</p>
+    </div>
+
+    <div class="pf-edu__list">
+      <div *ngFor="let edu of education; let i = index" pfReveal [delay]="i * 100">
+        <div class="pf-card pf-card--pad pf-edu__item" [class.pf-card--glow]="edu.grad" [style.--accent]="edu.color">
+          <div class="pf-edu__icon" [style.background]="edu.color + '15'" [style.borderColor]="edu.color + '30'">{{ edu.icon }}</div>
+          <div class="pf-edu__body">
+            <div class="pf-edu__head">
+              <div>
+                <h3 class="pf-edu__degree">{{ edu.degree }}</h3>
+                <p class="pf-edu__inst" [style.color]="edu.color">{{ edu.inst }}</p>
+                <p class="pf-edu__univ">{{ edu.univ }}</p>
+              </div>
+              <div class="pf-edu__meta">
+                <span class="pf-edu__period"><app-icon name="calendar" [size]="11"></app-icon>{{ edu.period }}</span>
+                <span class="pf-edu__loc"><app-icon name="map-pin" [size]="10" color="var(--pf-slate-600)"></app-icon>{{ edu.loc }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,69 @@
+<section id="skills" class="pf-section">
+  <div class="pf-section__line" style="--line-color: var(--pf-cyan)"></div>
+  <div class="pf-container">
+    <div class="pf-shead" pfReveal>
+      <div class="pf-shead__tag" style="--tag-color: var(--pf-cyan)">
+        <span class="pf-shead__dot"></span>tech stack
+      </div>
+      <h2 class="pf-shead__title">Skills &amp; Technologies</h2>
+      <p class="pf-shead__sub">The tools I use to build real, production-grade software.</p>
+    </div>
+
+    <div class="pf-skills__grid">
+      <div *ngFor="let cat of categories; let i = index" pfReveal [delay]="i * 65">
+        <div class="pf-card pf-card--pad pf-skills__card" [style.--accent]="cat.color">
+          <div class="pf-skills__card-head" [style.borderColor]="cat.color + '18'">
+            <div class="pf-skills__card-icon" [style.background]="cat.color + '18'" [style.color]="cat.color">
+              <app-icon [name]="cat.icon" [size]="22" [color]="cat.color"></app-icon>
+            </div>
+            <span class="pf-skills__card-title">{{ cat.title }}</span>
+          </div>
+          <div class="pf-skills__tags">
+            <span *ngFor="let it of cat.items" class="pf-skills__tag"
+                  [style.background]="cat.color + '0e'" [style.borderColor]="cat.color + '22'">{{ it }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pf-skills__bottom">
+      <div pfReveal>
+        <div class="pf-card pf-card--glow pf-skills__panel" style="--accent: var(--pf-indigo)">
+          <p class="pf-skills__panel-label" style="color: var(--pf-indigo)">Proficiency</p>
+          <div class="pf-skills__bars" #barRow *ngFor="let b of bars; let i = index">
+            <div class="pf-bar">
+              <div class="pf-bar__top">
+                <span class="pf-bar__label">{{ b.label }}</span>
+                <span class="pf-bar__pct" [style.color]="b.color">{{ b.pct }}%</span>
+              </div>
+              <div class="pf-bar__track">
+                <div class="pf-bar__fill" [style.width]="barsOn[i] ? b.pct + '%' : '0%'" [style.background]="b.color"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div pfReveal [delay]="100">
+        <div class="pf-card pf-card--glow pf-skills__panel" style="--accent: var(--pf-pink)">
+          <p class="pf-skills__panel-label" style="color: var(--pf-pink)">Languages</p>
+          <div class="pf-skills__lang-grid">
+            <div *ngFor="let l of languages" class="pf-skills__lang-cell"
+                 [style.background]="l.color + '0e'" [style.borderColor]="l.color + '25'">
+              <span class="pf-skills__lang-dot" [style.background]="l.color"></span>
+              <p class="pf-skills__lang-name">{{ l.lang }}</p>
+              <p class="pf-skills__lang-lvl">{{ l.lvl }}</p>
+            </div>
+          </div>
+          <div class="pf-skills__cert">
+            <app-icon name="award" [size]="18" color="var(--pf-amber)"></app-icon>
+            <div>
+              <p class="pf-skills__cert-title">Java Full Stack</p>
+              <p class="pf-skills__cert-sub">Certification · Verified</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,24 @@
+<header class="pf-header" [class.pf-header--scrolled]="scrolled">
+  <div class="pf-container pf-header__inner">
+    <div class="pf-brand" (click)="goTo('Home')">
+      <div class="pf-brand__badge">YD</div>
+      <span class="pf-brand__name">Yogesh<span class="pf-brand__dot">.</span>dev</span>
+    </div>
+
+    <nav class="pf-nav pf-nav--desktop">
+      <button *ngFor="let l of links" class="pf-nav__link" (click)="goTo(l)">{{ l }}</button>
+      <a href="mailto:yogeshdhakane001@gmail.com" class="pf-nav__cta">Hire Me</a>
+    </nav>
+
+    <button class="pf-nav__toggle" (click)="toggleMenu()" aria-label="Toggle menu">
+      <app-icon [name]="open ? 'x' : 'menu'" [size]="20"></app-icon>
+    </button>
+  </div>
+
+  <div class="pf-nav--mobile" *ngIf="open">
+    <button *ngFor="let l of links" class="pf-nav--mobile__link" (click)="goTo(l)">
+      {{ l }}
+      <app-icon name="chevron-right" [size]="14" color="#475569"></app-icon>
+    </button>
+  </div>
+</header>

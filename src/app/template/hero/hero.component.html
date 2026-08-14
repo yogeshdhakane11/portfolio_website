@@ -1,0 +1,60 @@
+<section id="home" class="pf-hero">
+  <div class="pf-container pf-hero__grid">
+    <div class="pf-hero__left">
+      <div class="pf-hero__badge">
+        <span class="pf-hero__dot"></span>
+        <span>Available for opportunities</span>
+      </div>
+
+      <h1 class="pf-hero__title">
+        <span class="pf-hero__hi">Hi, I'm</span>
+        <span class="pf-hero__white">Yogesh </span>
+        <span class="pf-hero__gradient">Dhakane</span>
+      </h1>
+
+      <div class="pf-hero__role">
+        <span class="pf-hero__role-text">{{ typedText }}</span><span class="pf-hero__caret">|</span>
+      </div>
+
+      <p class="pf-hero__desc">
+        1.8+ years crafting scalable software solutions — from <span class="pf-accent-indigo">Spring Boot backends</span>
+        to <span class="pf-accent-pink">Flutter mobile apps</span> &amp; <span class="pf-accent-cyan">Angular web applications</span>.
+        Building SaaS products that make a difference.
+      </p>
+
+      <div class="pf-hero__pill">
+        <app-icon name="star" [size]="14" color="var(--pf-amber)"></app-icon>
+        <span>Always open to Learn New things &amp; technology</span>
+      </div>
+
+      <div class="pf-hero__cta">
+        <a href="mailto:yogeshdhakane001@gmail.com" class="pf-btn pf-btn--primary">
+          <app-icon name="mail" [size]="16"></app-icon> Get In Touch
+        </a>
+        <a href="https://github.com/yogeshdhakane11/" target="_blank" rel="noopener noreferrer" class="pf-btn pf-btn--ghost">
+          <app-icon name="github" [size]="16"></app-icon> GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/yogesh-dhakane-640a0122a" target="_blank" rel="noopener noreferrer" class="pf-btn pf-btn--ghost">
+          <app-icon name="linkedin" [size]="16"></app-icon> LinkedIn
+        </a>
+      </div>
+
+      <div class="pf-hero__stats" #statsRow>
+        <div class="pf-hero__stat" *ngFor="let s of stats; let i = index">
+          <div class="pf-hero__stat-num" [style.color]="s.color">{{ displayValue(i) }}{{ s.suffix }}</div>
+          <div class="pf-hero__stat-label">{{ s.label }}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pf-hero__right" pfReveal [delay]="200" from="right">
+      <div class="pf-hero__photo">
+        <img src="assets/img/profile.jpg" alt="Yogesh Dhakane" />
+      </div>
+    </div>
+  </div>
+
+  <a href="#about" class="pf-hero__scroll">
+    <app-icon name="chevron-down" [size]="22"></app-icon>
+  </a>
+</section>

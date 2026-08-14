@@ -1,0 +1,66 @@
+.bg-root {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 9999px;
+}
+
+.orb-a {
+  width: 800px;
+  height: 800px;
+  top: -20%;
+  left: -20%;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.09), transparent);
+  filter: blur(160px);
+  animation: pf-floatA 14s ease-in-out infinite;
+}
+
+.orb-b {
+  width: 600px;
+  height: 600px;
+  bottom: -10%;
+  right: -10%;
+  background: radial-gradient(circle, rgba(236, 72, 153, 0.07), transparent);
+  filter: blur(120px);
+  animation: pf-floatB 18s ease-in-out infinite;
+}
+
+.orb-c {
+  width: 400px;
+  height: 400px;
+  top: 40%;
+  right: 20%;
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.06), transparent);
+  filter: blur(100px);
+  animation: pf-floatC 22s ease-in-out infinite;
+}
+
+.orb-d {
+  width: 300px;
+  height: 300px;
+  top: 60%;
+  left: 10%;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.07), transparent);
+  filter: blur(80px);
+  animation: pf-floatD 16s ease-in-out infinite;
+}
+
+.dot-grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.022;
+  background-image: radial-gradient(#6366f1 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+.vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 100% 80% at 50% 0%, transparent 40%, #04040f 100%);
+}

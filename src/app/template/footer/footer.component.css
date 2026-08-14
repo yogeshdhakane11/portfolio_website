@@ -1,0 +1,66 @@
+.pf-footer {
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid rgba(255, 255, 255, .05);
+  padding-block: 32px;
+}
+
+.pf-footer__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.pf-footer__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pf-footer__badge {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 900;
+  color: #fff;
+  background: linear-gradient(135deg, var(--pf-indigo), var(--pf-pink));
+}
+
+.pf-footer__text {
+  color: var(--pf-slate-600);
+  font-size: 14px;
+}
+
+.pf-footer__socials {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.pf-footer__social {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--pf-slate-700);
+  transition: all .2s;
+}
+
+.pf-footer__social:hover {
+  color: var(--pf-slate-400);
+  background: rgba(255, 255, 255, .05);
+}
+
+@media (min-width: 576px) {
+  .pf-footer__inner {
+    flex-direction: row;
+  }
+}
